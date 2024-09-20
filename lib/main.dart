@@ -24,7 +24,15 @@ class QuoteApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Simple Quote App"),
       ),
-      body: Container(),
+      body: Container(
+        child: const Text(
+          "Willkommen zur Quote-App!",
+          style: TextStyle(
+            color: Colors.green,
+            fontSize: 18,
+          ),
+        ),
+      ),
     );
   }
 }
