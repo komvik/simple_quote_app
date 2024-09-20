@@ -1,62 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:simple_quote_app/quote_app.dart';
+import 'package:simple_quote_app/quote_data.dart';
 
 void main() {
   final QuoteData quote = QuoteData(
-    quote: "Willkommen zur Zitate-App!",
+    text: "Willkommen zur Zitate-App!",
     author: "Kai",
     ranking: 9,
   );
 
-  runApp(const MainApp());
+  runApp(MainApp(quote: quote));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({super.key, required this.quote});
+
+  final QuoteData quote;
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: QuoteApp(),
+    return MaterialApp(
+      home: QuoteApp(quote: quote),
     );
   }
-}
-
-class QuoteApp extends StatelessWidget {
-  const QuoteApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Simple Quote App"),
-      ),
-      body: Container(
-        child: const Column(
-          children: [
-            Text(
-              "Willkommen zur Zitate-App!",
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 18,
-              ),
-            ),
-            Text("Was liebt Dart? Klammern und Semikolons"),
-            Text("- Kai"),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class QuoteData {
-  final String quote;
-  final String author;
-  final int ranking;
-
-  QuoteData({
-    required this.quote,
-    required this.author,
-    required this.ranking,
-  });
 }
