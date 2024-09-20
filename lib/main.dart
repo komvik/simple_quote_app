@@ -25,12 +25,18 @@ class QuoteApp extends StatelessWidget {
         title: const Text("Simple Quote App"),
       ),
       body: Container(
-        child: const Text(
-          "Willkommen zur Quote-App!",
-          style: TextStyle(
-            color: Colors.green,
-            fontSize: 18,
-          ),
+        child: const Column(
+          children: [
+            Text(
+              "Willkommen zur Quote-App!",
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 18,
+              ),
+            ),
+            Text("Was liebt Dart? Klammern und Semikolons"),
+            Text("- Kai"),
+          ],
         ),
       ),
     );
