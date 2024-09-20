@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  final QuoteData quote = QuoteData(
+    quote: "Willkommen zur Zitate-App!",
+    author: "Kai",
+    ranking: 9,
+  );
+
   runApp(const MainApp());
 }
 
@@ -28,7 +34,7 @@ class QuoteApp extends StatelessWidget {
         child: const Column(
           children: [
             Text(
-              "Willkommen zur Quote-App!",
+              "Willkommen zur Zitate-App!",
               style: TextStyle(
                 color: Colors.green,
                 fontSize: 18,
@@ -41,4 +47,16 @@ class QuoteApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class QuoteData {
+  final String quote;
+  final String author;
+  final int ranking;
+
+  QuoteData({
+    required this.quote,
+    required this.author,
+    required this.ranking,
+  });
 }
