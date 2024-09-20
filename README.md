@@ -1,3 +1,3 @@
 # simple_quote_app
 
-A new Flutter project.
+Eine einfache App mit sehr simpler Oberfläche, die eine Datenklasse und ein Repository verwendet.
