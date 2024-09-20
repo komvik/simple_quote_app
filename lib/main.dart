@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:simple_quote_app/quote_app.dart';
-import 'package:simple_quote_app/quote_data.dart';
+import 'package:simple_quote_app/quote_repository.dart';
 
 void main() {
-  final QuoteData quote = QuoteData(
-    text: "Willkommen zur Zitate-App!",
-    author: "Kai",
-    ranking: 9,
-  );
+  final QuoteRepository quoteRepository = QuoteRepository();
 
-  runApp(MainApp(quote: quote));
+  runApp(MainApp(repository: quoteRepository));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key, required this.quote});
+  const MainApp({super.key, required this.repository});
 
-  final QuoteData quote;
+  final QuoteRepository repository;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: QuoteApp(quote: quote),
+      home: QuoteApp(repository: repository),
     );
   }
 }
