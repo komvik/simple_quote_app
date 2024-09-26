@@ -18,19 +18,28 @@ class QuoteApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Simple Quote App"),
       ),
-      body: Column(
-        children: [
-          const Text(
-            "Willkommen zur Zitate-App!",
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 18,
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 128),
+            const Text(
+              "Willkommen zur Zitate-App!",
+              style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
             ),
-          ),
-          Text(text),
-          Text("- $author"),
-          Text("Ranking: $ranking/10"),
-        ],
+            const SizedBox(height: 64),
+            Text(
+              text,
+              //style: const TextStyle(fontSize: 16),
+            ),
+            Text("- $author"),
+            const SizedBox(height: 16),
+            Text("Ranking: $ranking/10"),
+          ],
+        ),
       ),
     );
   }
