@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:simple_quote_app/quote_data.dart';
-import 'package:simple_quote_app/quote_repository.dart';
+import 'package:simple_quote_app/data/quote_repository.dart';
+import 'package:simple_quote_app/model/quote_data.dart';
 
 class QuoteApp extends StatelessWidget {
   const QuoteApp({super.key, required this.repository});
@@ -19,26 +19,29 @@ class QuoteApp extends StatelessWidget {
         title: const Text("Simple Quote App"),
       ),
       body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 128),
-            const Text(
-              "Willkommen zur Zitate-App!",
-              style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 64),
-            Text(
-              text,
-              //style: const TextStyle(fontSize: 16),
-            ),
-            Text("- $author"),
-            const SizedBox(height: 16),
-            Text("Ranking: $ranking/10"),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 128),
+              const Text(
+                "Willkommen zur Zitate-App!",
+                style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 64),
+              Text(
+                text,
+                //style: const TextStyle(fontSize: 16),
+              ),
+              Text("- $author"),
+              const SizedBox(height: 16),
+              Text("Ranking: $ranking/10"),
+            ],
+          ),
         ),
       ),
     );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:simple_quote_app/data/multiple_quote_repository.dart';
+import 'package:simple_quote_app/data/quote_repository.dart';
 import 'package:simple_quote_app/quote_app.dart';
-import 'package:simple_quote_app/quote_repository.dart';
 
 void main() {
-  final QuoteRepository quoteRepository = QuoteRepository();
+  //final QuoteRepository quoteRepository = SingleQuoteRepository();
+  final QuoteRepository quoteRepository = MultipleQuoteRepository();
 
   runApp(MainApp(repository: quoteRepository));
 }
